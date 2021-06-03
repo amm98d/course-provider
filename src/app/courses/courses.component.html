@@ -1,107 +1,109 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <div class="container pb-3">
-    <div class="row" style="margin-top: 5px;" *ngFor="let item of [].constructor(courses.length);let i = index">
+    <div class="row" style="margin-top: 5px;" *ngFor="let item of [].constructor(filteredCourses.length);let i = index">
         <ng-container *ngIf="i%4===0;">
             <div class="col-3" *ngFor="let j of [i,i+1,i+2,i+3];">
-                <ng-container *ngIf="j<courses.length">
+                <ng-container *ngIf="j<filteredCourses.length">
                     <div class="card" style="max-width:20rem">
                         <div class="card-header">
-                            <h5 class="text-truncate">{{courses[j].title}}</h5>
+                            <h5 class="text-truncate">{{filteredCourses[j].title}}</h5>
                         </div>
-                        <img class="card-img-top imageThumbnail">
+                        <a href="#">
+                            <img src={{filteredCourses[j].imagePath}} class="card-img-top img-fluid">
+                        </a>
                         <div class="card-footer">
                             <div class="container py-0" style="padding-left:1em">
                                 <div class="row h-25" style="margin-top:5px;margin-bottom: 4px;">
-                                    <span style="font-size:11.5px">{{courses[j].instructor}}</span>
+                                    <span style="font-size:11.5px">{{filteredCourses[j].instructor}}</span>
                                 </div>
                                 <div class="row h-auto" style="margin-bottom: 8px;">
                                     <div style="display:inline;align-items: center;display: flex;">
                                         <span class="ml-auto rating">
-                                            {{courses[j].rating}}
-                                        </span>
-                                        <ng-container *ngIf="courses[j].rating==0">
+                                                {{filteredCourses[j].rating}}
+                                            </span>
+                                        <ng-container *ngIf="filteredCourses[j].rating==0">
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating==1">
+                                        <ng-container *ngIf="filteredCourses[j].rating==1">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating==2">
+                                        <ng-container *ngIf="filteredCourses[j].rating==2">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating==3">
+                                        <ng-container *ngIf="filteredCourses[j].rating==3">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating==4">
+                                        <ng-container *ngIf="filteredCourses[j].rating==4">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating>0 && courses[j].rating<=0.7">
+                                        <ng-container *ngIf="filteredCourses[j].rating>0 && filteredCourses[j].rating<=0.7">
                                             <span class="bi bi-star-half"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating>0.7 && courses[j].rating<=1.7">
+                                        <ng-container *ngIf="filteredCourses[j].rating>0.7 && filteredCourses[j].rating<=1.7">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-half"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating>1.7 && courses[j].rating<=2.7">
+                                        <ng-container *ngIf="filteredCourses[j].rating>1.7 && filteredCourses[j].rating<=2.7">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-half"></span>
                                             <span class="bi bi-star"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating>2.7 && courses[j].rating<=3.7">
+                                        <ng-container *ngIf="filteredCourses[j].rating>2.7 && filteredCourses[j].rating<=3.7">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-half"></span>
                                             <span class="bi bi-star"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating>3.7 && courses[j].rating<=4.7">
+                                        <ng-container *ngIf="filteredCourses[j].rating>3.7 && filteredCourses[j].rating<=4.7">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-half"></span>
                                         </ng-container>
-                                        <ng-container *ngIf="courses[j].rating>4.7">
+                                        <ng-container *ngIf="filteredCourses[j].rating>4.7">
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                             <span class="bi bi-star-fill"></span>
                                         </ng-container>
-                                        <span class="ml-auto" style="font-size:11.5px; margin-left: 3px;">{{courses[j].numRatings}}</span>
+                                        <span class="ml-auto" style="font-size:11.5px; margin-left: 3px;">{{filteredCourses[j].numRatings}}</span>
                                     </div>
 
                                 </div>
                                 <div class="row h-auto" style="margin-bottom: 4px;">
-                                    <a class="btn btn-outline-dark btn-sm">Enroll for {{courses[j].price}}</a>
+                                    <a class="btn btn-outline-dark btn-sm">Enroll for {{filteredCourses[j].price}}</a>
                                 </div>
                             </div>
                         </div>

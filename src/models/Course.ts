@@ -5,6 +5,7 @@ export class Course{
     level: number
     language: string
     rating: number
+    imagePath: string
     intro?: string
     instructor?: string
     outline?: string
