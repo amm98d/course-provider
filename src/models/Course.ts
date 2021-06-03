@@ -7,7 +7,7 @@ export class Course{
     rating: number
     imagePath: string
     intro?: string
-    instructor?: string
+    instructor: string
     outline?: string
     prerequisites?: string
     hours?: number

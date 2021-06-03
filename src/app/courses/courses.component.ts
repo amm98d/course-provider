@@ -22,7 +22,6 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {
     this.commonService.emitter
       .subscribe((newView: any[]) => {
-        // $('#dropdownMenuClickableInside').dropdown('toggle')
         this.activeCategory = newView[0];
         this.activeLevel = newView[1];
         this.filterCourses();
