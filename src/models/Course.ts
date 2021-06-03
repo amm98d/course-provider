@@ -10,12 +10,7 @@ export class Course{
     instructor?: string
     outline?: string
     prerequisites?: string
-    numLectures?: number
     hours?: number
-    quizzes?: number
-    exercises?: number
     price?: string
-    discount?: string
-    dateAdded?: Date
     numRatings?: string
 }

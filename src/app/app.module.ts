@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CoursesComponent } from './courses/courses.component';
 import * as $ from 'jquery';
+import { CoursePageComponent } from './course-page/course-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    CoursesComponent
+    CoursesComponent,
+    CoursePageComponent
   ],
   imports: [
     BrowserModule,

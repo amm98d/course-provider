@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<div class="container pb-3" style="margin-top: 5px;">
+    <section class="mb-5">
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="mdb-lightbox">
+                    <div class="row product-gallery mx-1">
+                        <div class="col-12 mb-0">
+                            <img src={{course.imagePath}} class="card-img-top img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>{{course.title}}</h3>
+                <p class="mb-2 text-muted text-uppercase small">{{course.category}}</p>
+                <div style="display:inline;align-items: center;display: flex;">
+                    <span class="ml-auto rating">
+                        {{course.rating}}
+                    </span>
+                    <ng-container *ngIf="course.rating==0">
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating==1">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating==2">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating==3">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating==4">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating>0 && course.rating<=0.7">
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating>0.7 && course.rating<=1.7">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating>1.7 && course.rating<=2.7">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating>2.7 && course.rating<=3.7">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating>3.7 && course.rating<=4.7">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                    </ng-container>
+                    <ng-container *ngIf="course.rating>4.7">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                    </ng-container>
+                    <span class="ml-auto" style="font-size:11.5px; margin-left: 3px;">{{course.numRatings}}</span>
+                </div>
+                <p class="mb-2 text-muted text-uppercase small"></p>
+                <p class="mb-2"><span class="mr-1"><strong>$12.99</strong></span></p>
+                <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+                <div class="table-responsive">
+                    <table class="table table-sm table-borderless mb-0">
+                        <tbody>
+                            <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Level</strong></th>
+                                <td>{{course.level===0?'Beginner':(course.level===1?'Intermediate':'Expert')}}</td>
+                            </tr>
+                            <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Instructor</strong></th>
+                                <td>{{course.instructor}}</td>
+                            </tr>
+                            <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Language</strong></th>
+                                <td>{{course.language}}</td>
+                            </tr>
+                            <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Hours</strong></th>
+                                <td>{{course.hours||'-'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <h4 class="mt-5">Intro</h4>
+        <p class="mb-3">{{course.intro || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem similique ullam, dicta iure obcaecati, quia temporibus adipisci reiciendis qui nemo quo mollitia. Autem molestias, eligendi officiis atque ut quam nisi!"}}</p>
+        <h4>Outline</h4>
+        <p class="mb-3">{{course.outline || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem similique ullam, dicta iure obcaecati, quia temporibus adipisci reiciendis qui nemo quo mollitia. Autem molestias, eligendi officiis atque ut quam nisi!"}}</p>
+        <h4 class="mb">Prerequisites</h4>
+        <p>{{course.prerequisites || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem similique ullam, dicta iure obcaecati, quia temporibus adipisci reiciendis qui nemo quo mollitia. Autem molestias, eligendi officiis atque ut quam nisi!"}}</p>
+    </section>
+</div>

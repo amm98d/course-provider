@@ -8,7 +8,7 @@
                         <div class="card-header">
                             <h5 class="text-truncate">{{filteredCourses[j].title}}</h5>
                         </div>
-                        <a href="#">
+                        <a [routerLink]="['/course',filteredCourses[j].id]">
                             <img src={{filteredCourses[j].imagePath}} class="card-img-top img-fluid">
                         </a>
                         <div class="card-footer">
@@ -100,10 +100,9 @@
                                         </ng-container>
                                         <span class="ml-auto" style="font-size:11.5px; margin-left: 3px;">{{filteredCourses[j].numRatings}}</span>
                                     </div>
-
                                 </div>
                                 <div class="row h-auto" style="margin-bottom: 4px;">
-                                    <a class="btn btn-outline-dark btn-sm">Enroll for {{filteredCourses[j].price}}</a>
+                                    <a [routerLink]="['/course',filteredCourses[j].id]" class="btn btn-outline-dark btn-sm">Enroll for {{filteredCourses[j].price}}</a>
                                 </div>
                             </div>
                         </div>
